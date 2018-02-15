@@ -3,12 +3,12 @@ library(parallel)
 library(tidyverse)
 
 param <- expand.grid(
-	nid = c(5000),
-	bxy = c(0.2, 0),
+	nid = c(5000, 10000),
+	bxy = c(0.5, 0.2, 0, -0.5, -0.2),
 	nu1 = c(1, 5, 10, 14),
 	nu2 = c(1, 5, 10, 14),
 	outliers_known = c(TRUE, FALSE),
-	simr = c(1:1000)
+	simr = c(1:100)
 )
 param$sim <- 1:nrow(param)
 
