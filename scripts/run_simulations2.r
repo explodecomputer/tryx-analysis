@@ -17,9 +17,11 @@ param$sim <- 1:nrow(param)
 l <- mclapply(1:nrow(param), function(i)
 {
 	set.seed(i)
-	out <- simulate.tryx(param$nid[i], param$nu1[i], param$nu2[i], param$bxy[i], outliers_known=param$outliers_known[i])
-	out <- outlier_sig(out)
-	return(tryx.analyse(out, plot=FALSE))
+	out <- try(tryx.simulate(param$nid[i], param$nu1[i], param$nu2[i], param$bxy[i], outliers_known=param$outliers_known[i]) %>% 
+		tryx.sig()  %>%
+		tryx.analyse(plot=FALSE))
+	if(class(out) == "try-error") return(NULL)
+	return(out)
 }, mc.cores=16)
 
 save(l, param, file="../results/sim2.rdata")
