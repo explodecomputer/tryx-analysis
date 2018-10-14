@@ -1,5 +1,6 @@
 library(tidyverse)
-load("../results/sim3_summary.rdata")
+load("../results/sim4_summary.rdata")
+simres <- subset(simres, est != "Outliers removed")
 simres$est[simres$est == "Outliers removed"] <- "Outliers removed (candidates)"
 
 ## Main plots
@@ -31,6 +32,33 @@ scale_colour_brewer(type="qual") +
 labs(x="Number of SNPs with pleiotropic effects", y="Proportion of estimates that are biased", colour="Method", shape="Outlier detection", linetype="Outlier detection")
 ggsave("../images/bias1.pdf")
 
+
+temp2$lab1 <- "Null model"
+temp2$lab1[temp2$bxy == 0.2] <- "Causal model"
+
+templ <- gather(subset(temp2, select=c(lab1, est, nu, psig, bias, outliers_known2)), "key", "value", psig, bias)
+templ$key[templ$key == "bias"] <- "Proportion with bias"
+templ$key[templ$key == "psig"] <- "Proportion detected at p < 0.05"
+ggplot(templ, aes(y=value, x=nu)) +
+geom_point(aes(colour=as.factor(est), shape=outliers_known2)) +
+geom_line(aes(colour=as.factor(est), linetype=outliers_known2)) +
+# facet_grid(key ~ lab1, scale="free_y") +
+facet_wrap(~ key + lab1, scale="free_y") +
+scale_colour_brewer(type="qual") +
+labs(x="Number of SNPs with pleiotropic effects", y="Proportion of simulations", colour="Method", shape="Outlier detection", linetype="Outlier detection")
+ggsave("../images/allsims.pdf")
+
+templs <- subset(templ, (outliers_known2 == "Pleiotropy detected" & est %in% c("Outliers adjusted", "Outliers removed (all)")) | est == "Raw")
+templs
+templs$est[templs$est == "Outliers removed (all)"] <- "Outliers removed"
+ggplot(templs, aes(y=value, x=nu)) +
+geom_point(aes(colour=as.factor(est))) +
+geom_line(aes(colour=as.factor(est))) +
+# facet_grid(key ~ lab1, scale="free_y") +
+facet_wrap(~ key + lab1, scale="free_y") +
+scale_colour_brewer(type="qual") +
+labs(x="Number of SNPs with pleiotropic effects", y="Proportion of simulations", colour="Method")
+ggsave("../images/allsims_simple.pdf")
 
 temp3 <- filter(simres, bxy >= 0) %>%
 	group_by(method, nu, bxy) %>%
