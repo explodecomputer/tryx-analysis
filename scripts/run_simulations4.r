@@ -24,7 +24,7 @@ l <- mclapply(1:nrow(param), function(i)
 	return(out)
 }, mc.cores=16)
 
-save(l, param, file="../results/sim2.rdata")
+save(l, param, file="../results/sim4.rdata")
 
 ## Summarise simulations
 
@@ -66,4 +66,4 @@ simres$diff <- simres$b - simres$bxy
 simres$pdiff <- pt(abs(simres$diff)/simres$se, simres$nsnp, lower.tail=FALSE)
 
 
-save(simres, file="../results/sim2_summary.rdata")
+save(simres, file="../results/sim4_summary.rdata")
