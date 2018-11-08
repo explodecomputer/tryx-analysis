@@ -145,8 +145,6 @@ id_remove <- c("UKB-a:24", "UKB-a:218", "UKB-a:490", "UKB-a:222", "UKB-a:450", "
 
 ta_ur <- tryx.analyse.mv(tryxscan_ur, id_remove=id_remove)               
 
-ggsave("F:\\Bristol\\Projects\\MR_TRYX\\R\\ur_adj_mr_280618.png", width = 7, height = 5, dpi = 300)
-
 
 #MR
 result<- mr(dat_ur, method_list=c("mr_ivw", "mr_egger_regression", "mr_weighted_median", "mr_weighted_mode"))
