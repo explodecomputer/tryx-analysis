@@ -35,9 +35,6 @@ dat %>% filter(steiger_dir) %>% mr_heterogeneity
 
 rm(list=ls())
 
-setwd ("F:\\Bristol\\Projects\\MR_TRYX\\R")
-load("F:/Bristol/Projects/MR_TRYX/R/tryx_example_030718.RData")
-
 
 devtools::install_github("MRCIEU/TwoSampleMR")
 devtools::install_github("WSpiller/RadialMR")
@@ -75,9 +72,6 @@ radial_res_ivw <-ivw_radial(radial_mr, 0.05/nrow(dat_sbp),3,0.00001, summary = F
 radial_plot <-plot_radial(radial_res_ivw,TRUE,FALSE,TRUE)
 radial_funnel <- funnel_radial(radial_res_ivw,TRUE)
 
-#save plot
-ggsave("F:\\Bristol\\Projects\\MR_TRYX\\R\\radial_mr_schd_300618.png", width = 5, height = 5, dpi = 300)
-ggsave("F:\\Bristol\\Projects\\MR_TRYX\\R\\funnel_radial_mr_schd_300618.png", width = 5, height = 5, dpi = 300)
 
 
 #############################################RESULT##########################################################
@@ -135,9 +129,6 @@ radial_res_ivw <-ivw_radial(radial_mr, 0.05/nrow(dat_ur2), summary = FALSE)
 radial_plot <-plot_radial(radial_res_ivw,TRUE,FALSE,TRUE)
 radial_funnel <- funnel_radial(radial_res_ivw,TRUE)
 
-#save plot
-ggsave("F:\\Bristol\\Projects\\MR_TRYX\\R\\radial_mr_ur_290618.png", width = 5, height = 5, dpi = 300)
-ggsave("F:\\Bristol\\Projects\\MR_TRYX\\R\\funnel_radial_mr_290618.png", width = 5, height = 5, dpi = 300)
 
 #############################################RESULT##########################################################
 #TRYX
@@ -153,8 +144,6 @@ id_remove <- c("UKB-a:24", "UKB-a:218", "UKB-a:490", "UKB-a:222", "UKB-a:450", "
 
 
 ta_ur <- tryx.analyse.mv(tryxscan_ur, id_remove=id_remove)               
-
-ggsave("F:\\Bristol\\Projects\\MR_TRYX\\R\\ur_adj_mr_280618.png", width = 7, height = 5, dpi = 300)
 
 
 #MR
@@ -197,9 +186,6 @@ radial_res_ivw <-ivw_radial(radial_mr, 0.05/nrow(dat_edu2), summary = FALSE)
 radial_plot <-plot_radial(radial_res_ivw,TRUE,FALSE,TRUE)
 radial_funnel <- funnel_radial(radial_res_ivw,TRUE)
 
-#save plot
-ggsave("F:\\Bristol\\Projects\\MR_TRYX\\R\\radial_mr_ur_280618.png", width = 5, height = 5, dpi = 300)
-ggsave("F:\\Bristol\\Projects\\MR_TRYX\\R\\funnel_radial_mr_250618.png", width = 5, height = 5, dpi = 300)
 
 #############################################RESULT##########################################################
 #TRYX
@@ -229,9 +215,6 @@ id_remove <- c("UKB-a:35", "UKB-a:279", "UKB-a:276", "UKB-a:268", "UKB-a:278", "
 
 ta_edu <- tryx.analyse.mv(tryxscan_edu, id_remove=id_remove)   
 #ta_bmi <- tryx.analyse.mv(tryxscan_bmi, id_remove=id_remove)  
-
-ggsave("F:\\Bristol\\Projects\\MR_TRYX\\R\\bmi_adj_mr_280618.png", width = 7, height = 5, dpi = 300)
-ggsave("F:\\Bristol\\Projects\\MR_TRYX\\R\\edu_adj_mr_280618.png", width = 7, height = 5, dpi = 300)
 
 
 #MR
@@ -272,9 +255,6 @@ radial_res_ivw <-ivw_radial(radial_mr, 0.05/nrow(dat_edu2), summary = FALSE)
 radial_plot <-plot_radial(radial_res_ivw,TRUE,FALSE,TRUE)
 radial_funnel <- funnel_radial(radial_res_ivw,TRUE)
 
-#save plot
-ggsave("F:\\Bristol\\Projects\\MR_TRYX\\R\\radial_mr_ur_280618.png", width = 5, height = 5, dpi = 300)
-ggsave("F:\\Bristol\\Projects\\MR_TRYX\\R\\funnel_radial_mr_250618.png", width = 5, height = 5, dpi = 300)
 
 #############################################RESULT##########################################################
 #TRYX
@@ -285,10 +265,7 @@ adj_slp <- tryx.analyse(tryxscan_slp)
 
 #Multivariable MR
 id_remove <- c("UKB-a:12", "UKB-a:15")
-
 ta_slp <- tryx.analyse.mv(tryxscan_slp, id_remove=id_remove)   
-
-ggsave("F:\\Bristol\\Projects\\MR_TRYX\\R\\bsp_adj_mr_280618.png", width = 7, height = 5, dpi = 300)
 
 
 #MR

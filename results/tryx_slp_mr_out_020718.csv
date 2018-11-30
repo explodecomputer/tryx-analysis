@@ -1,0 +1,47 @@
+id.exposure,id.outcome,outcome,exposure,method,nsnp,b,se,pval,pval_adj,sig,cat
+1112,22,Schizophrenia || id:22,Primary sclerosing cholangitis  ,Inverse variance weighted,13,-0.060856996,0.022136468,0.005974571,0.054966055,FALSE,Digestive System Diseases
+2,22,Schizophrenia || id:22,Body mass index ,Inverse variance weighted,74,0.01103086,0.087145616,0.899273116,0.90561788,FALSE,Physiological Phenomena
+299,22,Schizophrenia || id:22,HDL cholesterol ,Inverse variance weighted,84,0.056076174,0.04488752,0.211570067,0.491254417,FALSE,Lipids
+30,22,Schizophrenia || id:22,Crohn's disease ,Inverse variance weighted,45,0.011343281,0.016030487,0.479189508,0.62820539,FALSE,Digestive System Diseases
+UKB-a:101,22,Schizophrenia || id:22,Non-cancer illness code self-reported: malabsorption/coeliac disease ,Inverse variance weighted,11,-8.401446802,2.265588023,0.000208667,0.009598703,TRUE,Therapeutics
+UKB-a:106,22,Schizophrenia || id:22,Non-cancer illness code self-reported: osteoarthritis ,Wald ratio,1,-2.443438005,2.39861333,0.308351232,0.541694474,FALSE,Therapeutics
+UKB-a:12,22,Schizophrenia || id:22,Nap during day ,Inverse variance weighted,46,0.036483854,0.307704903,0.90561788,0.90561788,FALSE,Psychological Phenomena
+UKB-a:15,22,Schizophrenia || id:22,Daytime dozing / sleeping (narcolepsy) ,Inverse variance weighted,18,0.586520613,0.88042277,0.50529564,0.62820539,FALSE,Nervous System Diseases
+UKB-a:195,22,Schizophrenia || id:22,Sitting height ,Inverse variance weighted,381,-0.081740224,0.047034605,0.082232991,0.343883415,FALSE,Physiological Phenomena
+UKB-a:196,22,Schizophrenia || id:22,Fluid intelligence score ,Inverse variance weighted,37,-0.144701121,0.070883236,0.041210968,0.189570451,FALSE,Behavior and Behavior Mechanisms
+UKB-a:197,22,Schizophrenia || id:22,Prospective memory result ,Inverse variance weighted,2,4.493049893,1.34773981,0.000856785,0.013137375,TRUE,Psychological Phenomena
+UKB-a:248,22,Schizophrenia || id:22,Body mass index (BMI) ,Inverse variance weighted,271,-0.152827785,0.067062018,0.022672875,0.130369031,FALSE,Physiological Phenomena
+UKB-a:249,22,Schizophrenia || id:22,Weight ,Inverse variance weighted,295,-0.102781669,0.065517574,0.116702737,0.412948145,FALSE,"Pathological Conditions, Signs and Symptoms"
+UKB-a:25,22,Schizophrenia || id:22,Alcohol intake frequency. ,Inverse variance weighted,38,-0.017122746,0.132863198,0.897456552,0.90561788,FALSE,Behavior and Behavior Mechanisms
+UKB-a:264,22,Schizophrenia || id:22,Body fat percentage ,Inverse variance weighted,226,-0.021848437,0.101940684,0.830293625,0.90561788,FALSE,Physiological Phenomena
+UKB-a:265,22,Schizophrenia || id:22,Whole body fat mass ,Inverse variance weighted,248,-0.079475338,0.073958925,0.282559437,0.541694474,FALSE,Physiological Phenomena
+UKB-a:270,22,Schizophrenia || id:22,Impedance of leg (right) ,Inverse variance weighted,275,0.235252924,0.069173574,0.000671626,0.013137375,TRUE,Physiological Phenomena
+UKB-a:271,22,Schizophrenia || id:22,Impedance of leg (left) ,Inverse variance weighted,281,0.193683387,0.065616778,0.003159933,0.036339227,TRUE,Physiological Phenomena
+UKB-a:274,22,Schizophrenia || id:22,Leg fat percentage (right) ,Inverse variance weighted,219,-0.274229789,0.122875911,0.025630696,0.131001338,FALSE,Physiological Phenomena
+UKB-a:275,22,Schizophrenia || id:22,Leg fat mass (right) ,Inverse variance weighted,255,-0.138477836,0.086136753,0.107911638,0.412948145,FALSE,Physiological Phenomena
+UKB-a:278,22,Schizophrenia || id:22,Leg fat percentage (left) ,Inverse variance weighted,218,-0.309702868,0.124016513,0.01251532,0.082243528,FALSE,Physiological Phenomena
+UKB-a:279,22,Schizophrenia || id:22,Leg fat mass (left) ,Inverse variance weighted,246,-0.137272185,0.091109141,0.131893084,0.43336299,FALSE,Physiological Phenomena
+UKB-a:282,22,Schizophrenia || id:22,Arm fat percentage (right) ,Inverse variance weighted,208,-0.048230701,0.103938178,0.642624401,0.757967243,FALSE,Physiological Phenomena
+UKB-a:283,22,Schizophrenia || id:22,Arm fat mass (right) ,Inverse variance weighted,236,-0.066513283,0.073360995,0.364588039,0.541694474,FALSE,Physiological Phenomena
+UKB-a:286,22,Schizophrenia || id:22,Arm fat percentage (left) ,Inverse variance weighted,226,-0.063763203,0.094691907,0.500708479,0.62820539,FALSE,Physiological Phenomena
+UKB-a:287,22,Schizophrenia || id:22,Arm fat mass (left) ,Inverse variance weighted,240,-0.066793612,0.073611831,0.364207974,0.541694474,FALSE,Physiological Phenomena
+UKB-a:290,22,Schizophrenia || id:22,Trunk fat percentage ,Inverse variance weighted,199,0.088941562,0.093539169,0.341681381,0.541694474,FALSE,Physiological Phenomena
+UKB-a:291,22,Schizophrenia || id:22,Trunk fat mass ,Inverse variance weighted,249,-0.047111333,0.069923451,0.500466555,0.62820539,FALSE,Physiological Phenomena
+UKB-a:336,22,Schizophrenia || id:22,Forced vital capacity (FVC) ,Inverse variance weighted,190,0.107587669,0.081412496,0.186330383,0.476177645,FALSE,Circulatory and Respiratory Physiological Phenomena
+UKB-a:337,22,Schizophrenia || id:22,Forced expiratory volume in 1-second (FEV1) ,Inverse variance weighted,131,0.100348524,0.095127326,0.291477279,0.541694474,FALSE,Circulatory and Respiratory Physiological Phenomena
+UKB-a:338,22,Schizophrenia || id:22,Peak expiratory flow (PEF) ,Inverse variance weighted,67,0.187952909,0.129145286,0.14556957,0.446413347,FALSE,Circulatory and Respiratory Physiological Phenomena
+UKB-a:34,22,Schizophrenia || id:22,Comparative body size at age 10 ,Inverse variance weighted,139,-0.097746558,0.107914837,0.365054972,0.541694474,FALSE,Physiological Phenomena
+UKB-a:35,22,Schizophrenia || id:22,Comparative height size at age 10 ,Inverse variance weighted,313,-0.065937317,0.062171244,0.288882722,0.541694474,FALSE,Physiological Phenomena
+UKB-a:359,22,Schizophrenia || id:22,Diastolic blood pressure automated reading ,Inverse variance weighted,151,-0.11036174,0.088732532,0.213588877,0.491254417,FALSE,Physiological Phenomena
+UKB-a:374,22,Schizophrenia || id:22,Hand grip strength (left) ,Inverse variance weighted,71,-0.039869426,0.184678028,0.829076502,0.90561788,FALSE,Musculoskeletal and Neural Physiological Phenomena
+UKB-a:379,22,Schizophrenia || id:22,Hand grip strength (right) ,Inverse variance weighted,83,-0.156097402,0.164269937,0.341985567,0.541694474,FALSE,Musculoskeletal and Neural Physiological Phenomena
+UKB-a:382,22,Schizophrenia || id:22,Waist circumference ,Inverse variance weighted,194,-0.090223256,0.089591454,0.313909773,0.541694474,FALSE,Physiological Phenomena
+UKB-a:388,22,Schizophrenia || id:22,Hip circumference ,Inverse variance weighted,240,-0.021191483,0.064974621,0.744310744,0.855957356,FALSE,Physiological Phenomena
+UKB-a:389,22,Schizophrenia || id:22,Standing height ,Inverse variance weighted,512,-0.054391536,0.039407985,0.167520114,0.45328972,FALSE,Physiological Phenomena
+UKB-a:397,22,Schizophrenia || id:22,Qualifications: College or University degree ,Inverse variance weighted,158,0.312616861,0.222823755,0.160623353,0.45328972,FALSE,Population Characteristics
+UKB-a:437,22,Schizophrenia || id:22,Vascular/heart problems diagnosed by doctor: High blood pressure ,Inverse variance weighted,123,0.102085935,0.217823431,0.639310037,0.757967243,FALSE,Cardiovascular Diseases
+UKB-a:470,22,Schizophrenia || id:22,Pain type(s) experienced in last month: None of the above ,Inverse variance weighted,12,-0.808536152,1.005280419,0.421229992,0.587169079,FALSE,"Pathological Conditions, Signs and Symptoms"
+UKB-a:485,22,Schizophrenia || id:22,Types of physical activity in last 4 weeks: Strenuous sports ,Inverse variance weighted,3,-5.809691274,5.179244453,0.261979113,0.541694474,FALSE,Human Activities
+UKB-a:5,22,Schizophrenia || id:22,Time spent watching television (TV) ,Inverse variance weighted,50,-0.816580422,0.317474552,0.010107989,0.077494585,FALSE,Human Activities
+UKB-a:513,22,Schizophrenia || id:22,Usual walking pace ,Inverse variance weighted,28,0.348303106,0.423470946,0.410794734,0.587169079,FALSE,Human Activities
+UKB-a:61,22,Schizophrenia || id:22,Non-cancer illness code self-reported: hypertension ,Inverse variance weighted,129,-0.033415526,0.218586698,0.878500155,0.90561788,FALSE,Cardiovascular Diseases

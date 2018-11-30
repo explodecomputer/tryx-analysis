@@ -1,0 +1,70 @@
+id.exposure,id.outcome,outcome,exposure,method,nsnp,b,se,pval,pval_adj,sig,cat
+1008,7,Coronary heart disease || id:7,Platelet count ,Inverse variance weighted,31,5.02E-05,0.000652695,0.938723783,0.952528545,FALSE,Diagnosis
+1055,7,Coronary heart disease || id:7,Urate ,Inverse variance weighted,24,0.078320854,0.041976274,0.062064276,0.09732807,FALSE,Heterocyclic Compounds
+1106,7,Coronary heart disease || id:7,Serum cystatin C (eGFRcys) ,Inverse variance weighted,5,-0.421172485,0.434914962,0.33284368,0.438376727,FALSE,"Amino Acids, Peptides, and Proteins"
+1112,7,Coronary heart disease || id:7,Primary sclerosing cholangitis  ,Inverse variance weighted,14,-0.021039407,0.014676206,0.151694264,0.209338085,FALSE,Digestive System Diseases
+270,7,Coronary heart disease || id:7,Haemoglobin concentration ,Inverse variance weighted,14,-0.155240666,0.079846956,0.051867996,0.085211708,FALSE,"Amino Acids, Peptides, and Proteins"
+274,7,Coronary heart disease || id:7,Packed cell volume ,Inverse variance weighted,11,-0.078365546,0.054528058,0.150672526,0.209338085,FALSE,Circulatory and Respiratory Physiological Phenomena
+275,7,Coronary heart disease || id:7,Red blood cell count ,Inverse variance weighted,23,-0.036568006,0.215921648,0.865515247,0.891351523,FALSE,Circulatory and Respiratory Physiological Phenomena
+276,7,Coronary heart disease || id:7,Celiac disease ,Inverse variance weighted,12,0.030653229,0.031908576,0.336724152,0.438376727,FALSE,Digestive System Diseases
+299,7,Coronary heart disease || id:7,HDL cholesterol ,Inverse variance weighted,86,-0.17151439,0.059440024,0.003907883,0.008426372,TRUE,Lipids
+300,7,Coronary heart disease || id:7,LDL cholesterol ,Inverse variance weighted,77,0.402513051,0.049976081,8.01E-16,5.52E-15,TRUE,Lipids
+301,7,Coronary heart disease || id:7,Total cholesterol ,Inverse variance weighted,85,0.389341391,0.051747776,5.32E-14,2.62E-13,TRUE,Lipids
+798,7,Coronary heart disease || id:7,Myocardial infarction ,Inverse variance weighted,24,1.00015944,0.024343181,0,0,TRUE,Cardiovascular Diseases
+UKB-a:131,7,Coronary heart disease || id:7,Treatment/medication code: atenolol ,Inverse variance weighted,6,7.76947411,3.380965004,0.021561511,0.041326229,TRUE,Organic Chemicals
+UKB-a:136,7,Coronary heart disease || id:7,Treatment/medication code: ibuprofen ,Wald ratio,1,-7.789677759,1.811549465,1.71E-05,4.91E-05,TRUE,Organic Chemicals
+UKB-a:158,7,Coronary heart disease || id:7,Treatment/medication code: thyroxine product ,Inverse variance weighted,9,6.037636441,3.044761491,0.047372037,0.079723673,FALSE,"Amino Acids, Peptides, and Proteins"
+UKB-a:17,7,Coronary heart disease || id:7,Past tobacco smoking ,Inverse variance weighted,41,-0.264512671,0.120270395,0.027855422,0.050390518,FALSE,Behavior and Behavior Mechanisms
+UKB-a:190,7,Coronary heart disease || id:7,Treatment/medication code: levothyroxine sodium ,Inverse variance weighted,50,0.749504193,0.437521101,0.086699696,0.130049543,FALSE,"Amino Acids, Peptides, and Proteins"
+UKB-a:198,7,Coronary heart disease || id:7,Birth weight ,Inverse variance weighted,82,-0.338213181,0.062881307,7.51E-08,2.74E-07,TRUE,Physiological Phenomena
+UKB-a:199,7,Coronary heart disease || id:7,Mean time to correctly identify matches ,Inverse variance weighted,29,-0.002596874,0.175619851,0.988202189,0.988202189,FALSE,Psychological Phenomena
+UKB-a:201,7,Coronary heart disease || id:7,Illnesses of father: Heart disease ,Inverse variance weighted,17,8.323035297,0.518859784,6.61E-58,2.28E-56,TRUE,Diagnosis
+UKB-a:218,7,Coronary heart disease || id:7,Illnesses of siblings: None of the above (group 1) ,Inverse variance weighted,8,-4.700185373,2.193699528,0.032146522,0.055452751,FALSE,Diagnosis
+UKB-a:22,7,Coronary heart disease || id:7,Number of self-reported non-cancer illnesses ,Inverse variance weighted,20,1.133799395,0.31323487,0.000295006,0.000678514,TRUE,"Health Care Quality, Access, and Evaluation"
+UKB-a:222,7,Coronary heart disease || id:7,Illnesses of siblings: High blood pressure ,Inverse variance weighted,11,3.301205511,0.863660514,0.00013219,0.000325755,TRUE,Diagnosis
+UKB-a:224,7,Coronary heart disease || id:7,Smoking status: Previous ,Inverse variance weighted,18,0.786041339,0.524591481,0.134032592,0.192671851,FALSE,Behavior and Behavior Mechanisms
+UKB-a:24,7,Coronary heart disease || id:7,Number of treatments/medications taken ,Inverse variance weighted,21,2.137744573,0.485362563,1.06E-05,3.33E-05,TRUE,Therapeutics
+UKB-a:249,7,Coronary heart disease || id:7,Weight ,Inverse variance weighted,334,0.215930852,0.045975399,2.64E-06,8.69E-06,TRUE,"Pathological Conditions, Signs and Symptoms"
+UKB-a:266,7,Coronary heart disease || id:7,Whole body fat-free mass ,Inverse variance weighted,399,-0.074355938,0.054230426,0.170340332,0.230460449,FALSE,Physiological Phenomena
+UKB-a:267,7,Coronary heart disease || id:7,Whole body water mass ,Inverse variance weighted,398,-0.087609897,0.054596914,0.108566986,0.159385575,FALSE,Physiological Phenomena
+UKB-a:268,7,Coronary heart disease || id:7,Basal metabolic rate ,Inverse variance weighted,372,-0.013110813,0.055961333,0.814764945,0.877764024,FALSE,Metabolism
+UKB-a:269,7,Coronary heart disease || id:7,Impedance of whole body ,Inverse variance weighted,347,-0.193274885,0.05134912,0.000167259,0.00039796,TRUE,Physiological Phenomena
+UKB-a:270,7,Coronary heart disease || id:7,Impedance of leg (right) ,Inverse variance weighted,311,-0.091597245,0.048299421,0.057901089,0.09291105,FALSE,Physiological Phenomena
+UKB-a:272,7,Coronary heart disease || id:7,Impedance of arm (right) ,Inverse variance weighted,307,-0.247359831,0.05964958,3.37E-05,8.99E-05,TRUE,Physiological Phenomena
+UKB-a:273,7,Coronary heart disease || id:7,Impedance of arm (left) ,Inverse variance weighted,305,-0.262808554,0.059869691,1.14E-05,3.41E-05,TRUE,Physiological Phenomena
+UKB-a:276,7,Coronary heart disease || id:7,Leg fat-free mass (right) ,Inverse variance weighted,355,-0.012615136,0.057680822,0.826879153,0.877764024,FALSE,Physiological Phenomena
+UKB-a:277,7,Coronary heart disease || id:7,Leg predicted mass (right) ,Inverse variance weighted,352,-0.011065872,0.058965022,0.851136592,0.889824619,FALSE,Physiological Phenomena
+UKB-a:280,7,Coronary heart disease || id:7,Leg fat-free mass (left) ,Inverse variance weighted,353,0.033637868,0.058900032,0.56793117,0.687495626,FALSE,Physiological Phenomena
+UKB-a:281,7,Coronary heart disease || id:7,Leg predicted mass (left) ,Inverse variance weighted,349,0.050864644,0.059952739,0.396208365,0.506266244,FALSE,Physiological Phenomena
+UKB-a:284,7,Coronary heart disease || id:7,Arm fat-free mass (right) ,Inverse variance weighted,346,-0.033193803,0.061848299,0.591476853,0.703653497,FALSE,Physiological Phenomena
+UKB-a:285,7,Coronary heart disease || id:7,Arm predicted mass (right) ,Inverse variance weighted,362,-0.042542083,0.059502421,0.474631354,0.595446608,FALSE,Physiological Phenomena
+UKB-a:288,7,Coronary heart disease || id:7,Arm fat-free mass (left) ,Inverse variance weighted,351,-0.040124955,0.059944639,0.503261481,0.62009004,FALSE,Physiological Phenomena
+UKB-a:289,7,Coronary heart disease || id:7,Arm predicted mass (left) ,Inverse variance weighted,346,-0.030790753,0.061258662,0.615220855,0.719495576,FALSE,Physiological Phenomena
+UKB-a:292,7,Coronary heart disease || id:7,Trunk fat-free mass ,Inverse variance weighted,406,-0.130907722,0.049640275,0.008361145,0.017482395,TRUE,Physiological Phenomena
+UKB-a:293,7,Coronary heart disease || id:7,Trunk predicted mass ,Inverse variance weighted,406,-0.124654358,0.049566047,0.011906134,0.023472094,TRUE,Physiological Phenomena
+UKB-a:310,7,Coronary heart disease || id:7,Taking other prescription medications ,Inverse variance weighted,9,1.930844779,0.465753556,3.39E-05,8.99E-05,TRUE,Therapeutics
+UKB-a:318,7,Coronary heart disease || id:7,Birth weight of first child ,Inverse variance weighted,40,-0.311978203,0.094706438,0.000987161,0.00219723,TRUE,Physiological Phenomena
+UKB-a:35,7,Coronary heart disease || id:7,Comparative height size at age 10 ,Inverse variance weighted,357,-0.247955018,0.048005535,2.40E-07,8.29E-07,TRUE,Physiological Phenomena
+UKB-a:359,7,Coronary heart disease || id:7,Diastolic blood pressure automated reading ,Inverse variance weighted,172,0.581149433,0.076615631,3.32E-14,1.91E-13,TRUE,Diagnosis
+UKB-a:388,7,Coronary heart disease || id:7,Hip circumference ,Inverse variance weighted,275,0.130791723,0.051237286,0.010690169,0.021694754,TRUE,Physiological Phenomena
+UKB-a:389,7,Coronary heart disease || id:7,Standing height ,Inverse variance weighted,577,-0.207860228,0.028628076,3.85E-13,1.77E-12,TRUE,Physiological Phenomena
+UKB-a:434,7,Coronary heart disease || id:7,Vascular/heart problems diagnosed by doctor: Heart attack ,Inverse variance weighted,10,37.10616173,2.799475054,4.24E-40,9.75E-39,TRUE,Cardiovascular Diseases
+UKB-a:435,7,Coronary heart disease || id:7,Vascular/heart problems diagnosed by doctor: None of the above ,Inverse variance weighted,142,-1.99687498,0.184509952,2.69E-27,3.09E-26,TRUE,Cardiovascular Diseases
+UKB-a:436,7,Coronary heart disease || id:7,Vascular/heart problems diagnosed by doctor: Angina ,Inverse variance weighted,12,27.75094976,2.34893304,3.29E-32,4.55E-31,TRUE,Cardiovascular Diseases
+UKB-a:437,7,Coronary heart disease || id:7,Vascular/heart problems diagnosed by doctor: High blood pressure ,Inverse variance weighted,148,1.719257757,0.18037845,1.55E-21,1.34E-20,TRUE,Cardiovascular Diseases
+UKB-a:442,7,Coronary heart disease || id:7,Blood clot ,Inverse variance weighted,111,0.059303464,0.150617982,0.693777224,0.797843808,FALSE,Circulatory and Respiratory Physiological Phenomena
+UKB-a:449,7,Coronary heart disease || id:7,Medication for cholesterol ,Inverse variance weighted,23,-2.6981654,0.653756894,3.67E-05,9.39E-05,TRUE,Chemical Actions and Uses
+UKB-a:450,7,Coronary heart disease || id:7,Medication for cholesterol ,Inverse variance weighted,57,1.689963615,0.223949274,4.48E-14,2.38E-13,TRUE,Chemical Actions and Uses
+UKB-a:453,7,Coronary heart disease || id:7,Medication for pain relief ,Inverse variance weighted,16,-0.363759281,1.021057091,0.721647709,0.803124063,FALSE,Therapeutics
+UKB-a:454,7,Coronary heart disease || id:7,Medication for pain relief ,Inverse variance weighted,3,-1.076971301,3.376482475,0.749754947,0.82116018,FALSE,Therapeutics
+UKB-a:455,7,Coronary heart disease || id:7,Medication for pain relief ,Inverse variance weighted,13,-0.321751189,0.853719836,0.70626169,0.798886174,FALSE,Therapeutics
+UKB-a:469,7,Coronary heart disease || id:7,Pain type(s) experienced in last month: Headache ,Inverse variance weighted,29,-1.106177377,0.504968171,0.028481597,0.050390518,FALSE,"Pathological Conditions, Signs and Symptoms"
+UKB-a:489,7,Coronary heart disease || id:7,Medication for cholesterol blood pressure or diabetes: None of the above ,Inverse variance weighted,42,-2.759529051,0.406539476,1.14E-11,4.91E-11,TRUE,Chemical Actions and Uses
+UKB-a:490,7,Coronary heart disease || id:7,Medication for cholesterol blood pressure or diabetes: Blood pressure medication ,Inverse variance weighted,46,1.332512742,0.247771822,7.53E-08,2.74E-07,TRUE,Chemical Actions and Uses
+UKB-a:533,7,Coronary heart disease || id:7,Diagnoses - main ICD10: I21 Acute myocardial infarction ,Inverse variance weighted,3,59.78964664,10.69985018,2.30E-08,9.33E-08,TRUE,Cardiovascular Diseases
+UKB-a:534,7,Coronary heart disease || id:7,Diagnoses - main ICD10: I25 Chronic ischaemic heart disease ,Inverse variance weighted,14,26.05254512,3.311145912,3.60E-15,2.26E-14,TRUE,Cardiovascular Diseases
+UKB-a:61,7,Coronary heart disease || id:7,Non-cancer illness code self-reported: hypertension ,Inverse variance weighted,154,1.679812721,0.167644694,1.24E-23,1.23E-22,TRUE,Cardiovascular Diseases
+UKB-a:62,7,Coronary heart disease || id:7,Non-cancer illness code self-reported: angina ,Inverse variance weighted,12,27.90905883,2.299092632,6.55E-34,1.13E-32,TRUE,Cardiovascular Diseases
+UKB-a:63,7,Coronary heart disease || id:7,Non-cancer illness code self-reported: heart attack/myocardial infarction ,Inverse variance weighted,9,34.90711262,4.126201505,2.68E-17,2.05E-16,TRUE,Cardiovascular Diseases
+UKB-a:77,7,Coronary heart disease || id:7,Non-cancer illness code self-reported: hypothyroidism/myxoedema ,Inverse variance weighted,76,0.522337248,0.295307998,0.076929257,0.117958195,FALSE,Endocrine System Diseases
+UKB-a:78,7,Coronary heart disease || id:7,Non-cancer illness code self-reported: migraine ,Inverse variance weighted,12,-4.081562357,1.861811504,0.028361224,0.050390518,FALSE,Nervous System Diseases

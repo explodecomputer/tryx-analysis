@@ -1,0 +1,49 @@
+id.exposure,id.outcome,outcome,exposure,method,nsnp,b,se,pval,pval_adj,sig,cat
+30,2,Body mass index || id:2,Crohn's disease ,Inverse variance weighted,37,0.001144265,0.006307332,0.856039291,0.874252893,FALSE,Digestive System Diseases
+31,2,Body mass index || id:2,Inflammatory bowel disease ,Inverse variance weighted,45,-0.002218065,0.006895744,0.747712517,0.780221757,FALSE,Digestive System Diseases
+UKB-a:196,2,Body mass index || id:2,Fluid intelligence score ,Inverse variance weighted,34,-0.019722625,0.030196824,0.51366877,0.560365931,FALSE,Behavior and Behavior Mechanisms
+UKB-a:200,2,Body mass index || id:2,Suffer from  nerves  ,Inverse variance weighted,9,-1.675556412,1.101532044,0.128231095,0.150124209,FALSE,Behavior and Behavior Mechanisms
+UKB-a:248,2,Body mass index || id:2,Body mass index (BMI) ,Inverse variance weighted,238,0.793004741,0.018898619,0,0,TRUE,Physiological Phenomena
+UKB-a:249,2,Body mass index || id:2,Weight ,Inverse variance weighted,229,0.675804583,0.031232427,7.90E-104,2.71E-103,TRUE,"Pathological Conditions, Signs and Symptoms"
+UKB-a:25,2,Body mass index || id:2,Alcohol intake frequency,Inverse variance weighted,31,0.346849877,0.143572067,0.015698137,0.018837764,TRUE,Behavior and Behavior Mechanisms
+UKB-a:26,2,Body mass index || id:2,Average weekly red wine intake ,Inverse variance weighted,9,0.449793832,0.751758267,0.549624814,0.586266468,FALSE,Behavior and Behavior Mechanisms
+UKB-a:264,2,Body mass index || id:2,Body fat percentage ,Inverse variance weighted,198,0.957070321,0.0416455,7.16E-117,2.86E-116,TRUE,Physiological Phenomena
+UKB-a:265,2,Body mass index || id:2,Whole body fat mass ,Inverse variance weighted,204,0.757829522,0.027575422,2.88E-166,1.73E-165,TRUE,Physiological Phenomena
+UKB-a:266,2,Body mass index || id:2,Whole body fat-free mass ,Inverse variance weighted,280,0.538582006,0.043091293,7.60E-36,1.30E-35,TRUE,Physiological Phenomena
+UKB-a:267,2,Body mass index || id:2,Whole body water mass ,Inverse variance weighted,276,0.54778451,0.043616358,3.54E-36,6.30E-36,TRUE,Physiological Phenomena
+UKB-a:268,2,Body mass index || id:2,Basal metabolic rate ,Inverse variance weighted,263,0.619207363,0.042813604,2.08E-47,4.16E-47,TRUE,Metabolism
+UKB-a:270,2,Body mass index || id:2,Impedance of leg (right) ,Inverse variance weighted,224,-0.547792018,0.033325222,1.03E-60,2.35E-60,TRUE,Physiological Phenomena
+UKB-a:271,2,Body mass index || id:2,Impedance of leg (left) ,Inverse variance weighted,222,-0.590809995,0.032039922,6.30E-76,1.78E-75,TRUE,Physiological Phenomena
+UKB-a:274,2,Body mass index || id:2,Leg fat percentage (right) ,Inverse variance weighted,183,1.172769891,0.056875204,1.81E-94,5.44E-94,TRUE,Physiological Phenomena
+UKB-a:275,2,Body mass index || id:2,Leg fat mass (right) ,Inverse variance weighted,201,0.968000808,0.030300773,6.06E-224,5.82E-223,TRUE,Physiological Phenomena
+UKB-a:276,2,Body mass index || id:2,Leg fat-free mass (right) ,Inverse variance weighted,245,0.675337579,0.043669538,6.00E-54,1.25E-53,TRUE,Physiological Phenomena
+UKB-a:277,2,Body mass index || id:2,Leg predicted mass (right) ,Inverse variance weighted,240,0.688946338,0.044307574,1.61E-54,3.52E-54,TRUE,Physiological Phenomena
+UKB-a:278,2,Body mass index || id:2,Leg fat percentage (left) ,Inverse variance weighted,182,1.196134513,0.056747167,1.26E-98,4.03E-98,TRUE,Physiological Phenomena
+UKB-a:279,2,Body mass index || id:2,Leg fat mass (left) ,Inverse variance weighted,203,0.985668881,0.029822959,1.52E-239,1.83E-238,TRUE,Physiological Phenomena
+UKB-a:280,2,Body mass index || id:2,Leg fat-free mass (left) ,Inverse variance weighted,247,0.717988926,0.042884571,6.44E-63,1.63E-62,TRUE,Physiological Phenomena
+UKB-a:281,2,Body mass index || id:2,Leg predicted mass (left) ,Inverse variance weighted,243,0.726498993,0.043549294,1.77E-62,4.24E-62,TRUE,Physiological Phenomena
+UKB-a:282,2,Body mass index || id:2,Arm fat percentage (right) ,Inverse variance weighted,169,1.03312252,0.037874767,7.88E-164,4.20E-163,TRUE,Physiological Phenomena
+UKB-a:283,2,Body mass index || id:2,Arm fat mass (right) ,Inverse variance weighted,195,0.80292574,0.022836645,8.31E-271,1.33E-269,TRUE,Physiological Phenomena
+UKB-a:284,2,Body mass index || id:2,Arm fat-free mass (right) ,Inverse variance weighted,234,0.579270606,0.049282592,6.73E-32,1.08E-31,TRUE,Physiological Phenomena
+UKB-a:285,2,Body mass index || id:2,Arm predicted mass (right) ,Inverse variance weighted,239,0.633944924,0.052305863,8.28E-34,1.37E-33,TRUE,Physiological Phenomena
+UKB-a:286,2,Body mass index || id:2,Arm fat percentage (left) ,Inverse variance weighted,183,1.022602177,0.037088021,2.39E-167,1.64E-166,TRUE,Physiological Phenomena
+UKB-a:287,2,Body mass index || id:2,Arm fat mass (left) ,Inverse variance weighted,201,0.804386202,0.022149666,9.06E-289,2.17E-287,TRUE,Physiological Phenomena
+UKB-a:288,2,Body mass index || id:2,Arm fat-free mass (left) ,Inverse variance weighted,236,0.590701995,0.045680834,3.01E-38,5.77E-38,TRUE,Physiological Phenomena
+UKB-a:289,2,Body mass index || id:2,Arm predicted mass (left) ,Inverse variance weighted,226,0.61003492,0.047837248,3.03E-37,5.59E-37,TRUE,Physiological Phenomena
+UKB-a:290,2,Body mass index || id:2,Trunk fat percentage ,Inverse variance weighted,176,0.717528472,0.039247675,1.15E-74,3.07E-74,TRUE,Physiological Phenomena
+UKB-a:291,2,Body mass index || id:2,Trunk fat mass ,Inverse variance weighted,206,0.69235174,0.028610037,2.25E-129,1.08E-128,TRUE,Physiological Phenomena
+UKB-a:292,2,Body mass index || id:2,Trunk fat-free mass ,Inverse variance weighted,268,0.405978084,0.045055161,2.05E-19,3.07E-19,TRUE,Physiological Phenomena
+UKB-a:293,2,Body mass index || id:2,Trunk predicted mass ,Inverse variance weighted,271,0.404861163,0.044788319,1.57E-19,2.44E-19,TRUE,Physiological Phenomena
+UKB-a:34,2,Body mass index || id:2,Comparative body size at age 10 ,Inverse variance weighted,116,1.134564653,0.046988414,8.30E-129,3.62E-128,TRUE,Physiological Phenomena
+UKB-a:35,2,Body mass index || id:2,Comparative height size at age 10 ,Inverse variance weighted,245,-0.03654269,0.031058823,0.239369607,0.267203282,FALSE,Physiological Phenomena
+UKB-a:382,2,Body mass index || id:2,Waist circumference ,Inverse variance weighted,161,0.888163004,0.031319455,6.63E-177,5.31E-176,TRUE,Physiological Phenomena
+UKB-a:388,2,Body mass index || id:2,Hip circumference ,Inverse variance weighted,197,0.689333317,0.030047842,1.80E-116,6.66E-116,TRUE,Physiological Phenomena
+UKB-a:389,2,Body mass index || id:2,Standing height ,Inverse variance weighted,378,-0.062214622,0.017040629,0.000261264,0.000348352,TRUE,Physiological Phenomena
+UKB-a:397,2,Body mass index || id:2,Qualifications: College or University degree ,Inverse variance weighted,142,-0.391194095,0.07389989,1.20E-07,1.74E-07,TRUE,Population Characteristics
+UKB-a:398,2,Body mass index || id:2,Qualifications: None of the above ,Inverse variance weighted,49,0.46616803,0.133543498,0.000481652,0.000624846,TRUE,Population Characteristics
+UKB-a:399,2,Body mass index || id:2,Qualifications: A levels/AS levels or equivalent ,Inverse variance weighted,45,-0.410922894,0.105016699,9.12E-05,0.000125051,TRUE,Population Characteristics
+UKB-a:47,2,Body mass index || id:2,Irritability ,Inverse variance weighted,21,0.02339822,0.231426861,0.919467772,0.919467772,FALSE,Behavior and Behavior Mechanisms 
+UKB-a:486,2,Body mass index || id:2,Types of physical activity in last 4 weeks: Light DIY (eg: pruning watering the lawn) ,Inverse variance weighted,2,-1.692884155,1.268888102,0.182155453,0.20817766,FALSE,Human Activities
+UKB-a:502,2,Body mass index || id:2,Job involves mainly walking or standing ,Inverse variance weighted,5,0.275110501,0.09037604,0.00233405,0.002872677,TRUE,Human Activities
+UKB-a:503,2,Body mass index || id:2,Job involves heavy manual or physical work ,Inverse variance weighted,14,0.348310558,0.10449618,0.000858417,0.001084316,TRUE,Human Activities
+UKB-a:513,2,Body mass index || id:2,Usual walking pace ,Inverse variance weighted,22,-1.594547085,0.392612059,4.88E-05,6.89E-05,TRUE,Human Activities
