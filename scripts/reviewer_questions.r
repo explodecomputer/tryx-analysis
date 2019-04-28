@@ -2,6 +2,9 @@
 
 library(TwoSampleMR)
 library(simulateGP)
+
+
+# Simulate one outlier occurring through x1
 g <- make_geno(10000, 19, 0.5)
 e1 <- choose_effects(10, 0.05)
 e2 <- choose_effects(10, 0.05)
@@ -9,6 +12,7 @@ x1 <- make_phen(e1, g[,1:10])
 x2 <- make_phen(e2, g[,10:19])
 
 y <- make_phen(c(0.2, 0.2), cbind(x1, x2))
+
 
 mvdat <- make_mvdat(list(x1,x2), y, g)
 mv_multiple(mvdat)
@@ -29,3 +33,8 @@ est1adj$beta.outcome[est1adj$SNP == 10] <-  est1adj$beta.outcome[est1adj$SNP == 
 
 mr(subset(est1adj, pval.exposure < 5e-8))
 
+
+
+# Also compare the situation where x1 is mediated by x2 - multivariable MR will give the wrong answer here, but it is not easy to distinguish
+
+# In the intro we need add explanation of why not to use mvmr
