@@ -28,10 +28,19 @@ param$sim <- 1:nrow(param)
 dim(param)
 
 
+args <- commandArgs(T)
+chunk <- as.numeric(args[1])
+chunksize <- as.numeric(args[2])
+ncores <- as.numeric(args[3])
+a <- (chunk - 1) * chunksize + 1
+b <- min(chunk * chunksize, nrow(param))
+message("Running ", a, " to ", b)
+param <- param[a:b, ]
+
 
 l <- mclapply(1:nrow(param), function(i)
 {
-	set.seed(i)
+	set.seed(param$sim[i])
 	out <- try({
 		sim <- tryx.simulate(param$nid[i], param$nu1[i], param$nu2[i], param$bu3y[i], param$bxu3[i], param$bxy[i], outliers_known=param$outliers_known[i]) %>% tryx.sig()
 		res <- sim %>% 
@@ -41,59 +50,6 @@ l <- mclapply(1:nrow(param), function(i)
 	})
 	if(class(out) == "try-error") return(NULL)
 	return(out)
-}, mc.cores=16)
+}, mc.cores=ncores)
 
-save(l, param, file="../results/sim5.rdata")
-
-## Summarise simulations
-
-simres <- lapply(1:length(l), function(x){
-	a <- l[[x]]$estimates
-	a$sim <- x
-	a$no_outlier_flag <- l[[x]]$detection$no_outlier_flag
-	return(a)
-}) %>% bind_rows %>% inner_join(param) %>% filter(!is.na(est))
-simres$no_outlier_flag[is.na(simres$no_outlier_flag)] <- FALSE
-simres <- group_by(simres, sim) %>%
-	do({
-		x <- .
-		if(x$no_outlier_flag[1])
-		{
-			x <- rbind(
-				subset(x, est == "Raw"),
-				subset(x, est == "Raw"),
-				subset(x, est == "Raw")
-			)
-			x$est <- c("Outliers removed", "Raw", "Outliers adjusted")
-		}
-		x
-	})
-
-simres$nu <- simres$nu1 + simres$nu2
-
-dim(simres)
-table(simres$est)
-
-# Rename the method
-simres$outliers_known2 <- "Pleiotropy known"
-simres$outliers_known2[!simres$outliers_known] <- "Pleiotropy detected"
-simres$method <- paste0(simres$est, " (", simres$outliers_known2, ")")
-simres$method[simres$est == "Raw"] <- "Raw"
-
-# how different from the simulated causal effect is the estimated causal effect?
-simres$diff <- simres$b - simres$bxy
-simres$pdiff <- pt(abs(simres$diff)/simres$se, simres$nsnp, lower.tail=FALSE)
-
-
-mvres <- lapply(1:length(l), function(x)){
-	a <- l[[x]]$mvres
-	if(class(a) == "list")
-	{
-		a$result$sim <- x
-		return(a$result)
-	} else {
-		return(NULL)
-	}
-} %>% bind_rows()
-
-save(simres, mvres file="../results/sim5_summary.rdata")
+save(l, param, file=paste0("../results/sim5_", chunk, ".rdata"))
