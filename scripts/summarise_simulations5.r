@@ -17,9 +17,10 @@ simres <- group_by(simres, sim) %>%
 			x <- rbind(
 				subset(x, est == "Raw"),
 				subset(x, est == "Raw"),
+				subset(x, est == "Raw"),
 				subset(x, est == "Raw")
 			)
-			x$est <- c("Outliers removed", "Raw", "Outliers adjusted")
+			x$est <- c("Outliers removed (all)", "Outliers removed (candidates)", "Raw", "Outliers adjusted")
 		}
 		x
 	})
@@ -34,6 +35,7 @@ simres$outliers_known2 <- "Pleiotropy known"
 simres$outliers_known2[!simres$outliers_known] <- "Pleiotropy detected"
 simres$method <- paste0(simres$est, " (", simres$outliers_known2, ")")
 simres$method[simres$est == "Raw"] <- "Raw"
+table(simres$method)
 
 # how different from the simulated causal effect is the estimated causal effect?
 simres$diff <- simres$b - simres$bxy
@@ -57,6 +59,20 @@ mvresx <- subset(mvres, exposure == "X")
 mvresx$diff <- mvresx$b - mvresx$bxy
 mvresx$pdiff <- pt(abs(mvresx$diff)/mvresx$se, mvresx$nsnp, lower.tail=FALSE)
 
+mvresx$est <- "Multivariable MR"
+mvresx$method <- "Multivariable MR (Pleiotropy detected)"
+mvresx$outliers_known <- FALSE
+mvresx$outliers_known2 <- "Pleiotropy detected"
 
-save(simres, mvres, mvresx, file="../results/sim5_summary.rdata")
+simr <- bind_rows(simres, mvresx)
+
+table(simr$est)
+table(simr$method)
+save(simres, mvres, mvresx, simr, file="../results/sim5_summary.rdata")
+
+
+library(dplyr)
+library(ggplot2)
+load("../results/sim5_summary.rdata")
+
 

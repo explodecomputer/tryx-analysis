@@ -11,7 +11,7 @@ param <- bind_rows(
 		nu1 = c(1, 5, 10, 14),
 		nu2 = c(1, 5, 10, 14),
 		outliers_known = c(FALSE),
-		simr = c(1:1000)
+		simr = c(1:2000)
 	),
 	expand.grid(
 		nid = c(5000),
@@ -21,7 +21,17 @@ param <- bind_rows(
 		nu1 = c(1, 5, 10, 14),
 		nu2 = c(1, 5, 10, 14),
 		outliers_known = c(FALSE),
-		simr = c(1:1000)
+		simr = c(1:2000)
+	),
+	expand.grid(
+		nid = c(5000),
+		bxy = 0, 0.2,
+		bu3y = 0,
+		bxu3 = 0,
+		nu1 = c(1, 5, 10, 14),
+		nu2 = c(1, 5, 10, 14),
+		outliers_known = c(FALSE),
+		simr = c(1:2000)
 	)
 )
 param$sim <- 1:nrow(param)
