@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --mem=10G
 #SBATCH --time=0-10:00:00
-#SBATCH --array=1-200
+#SBATCH --array=1-600
 #SBATCH --output=job_reports/slurm-%A_%a.out
 #SBATCH --partition=mrcieu
 

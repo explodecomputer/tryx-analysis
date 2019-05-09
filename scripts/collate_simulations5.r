@@ -3,7 +3,7 @@ library(dplyr)
 a <- list()
 b <- list()
 
-for(i in 1:200)
+for(i in 1:600)
 {
 	message(i)
 	load(paste0("../results/sim5_", i, ".rdata"))
@@ -13,5 +13,5 @@ for(i in 1:200)
 
 l <- unlist(a, recursive=FALSE)
 param <- bind_rows(b)
-save(l, param, file="../results/SIM5.rdata")
+save(l, param, file="../results/sim5.rdata")
 

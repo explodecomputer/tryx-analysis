@@ -1,6 +1,6 @@
 library(dplyr)
 
-load("../results/SIM5.rdata")
+load("../results/sim5.rdata")
 
 simres <- lapply(1:length(l), function(x){
 	a <- l[[x]]$estimates
