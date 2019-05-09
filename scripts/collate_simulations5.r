@@ -3,7 +3,7 @@ library(dplyr)
 a <- list()
 b <- list()
 
-for(i in 1:600)
+for(i in 1:800)
 {
 	message(i)
 	load(paste0("../results/sim5_", i, ".rdata"))

@@ -65,14 +65,11 @@ mvresx$outliers_known <- FALSE
 mvresx$outliers_known2 <- "Pleiotropy detected"
 
 simr <- bind_rows(simres, mvresx)
+simr$nu <- simr$nu1 + simr$nu2
+simr$mediator <- simr$bu3y * simr$bxu3
 
 table(simr$est)
 table(simr$method)
 save(simres, mvres, mvresx, simr, file="../results/sim5_summary.rdata")
-
-
-library(dplyr)
-library(ggplot2)
-load("../results/sim5_summary.rdata")
 
 
