@@ -25,7 +25,7 @@ param <- bind_rows(
 	),
 	expand.grid(
 		nid = c(5000),
-		bxy = 0, 0.2,
+		bxy = c(0, 0.2),
 		bu3y = 0,
 		bxu3 = 0,
 		nu1 = c(1, 5, 10, 14),
