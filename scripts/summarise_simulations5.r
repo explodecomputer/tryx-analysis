@@ -61,8 +61,6 @@ mvresx$pdiff <- pt(abs(mvresx$diff)/mvresx$se, mvresx$nsnp, lower.tail=FALSE)
 
 mvresx$est <- "Multivariable MR"
 mvresx$method <- "Multivariable MR (Pleiotropy detected)"
-mvresx$outliers_known <- FALSE
-mvresx$outliers_known2 <- "Pleiotropy detected"
 
 simr <- bind_rows(simres, mvresx)
 simr$nu <- simr$nu1 + simr$nu2
