@@ -6,7 +6,7 @@ b <- list()
 for(i in 1:640)
 {
 	message(i)
-	load(paste0("../results/sim5_", i, ".rdata"))
+	load(paste0("../results/scratch/sim5_", i, ".rdata"))
 	a[[i]] <- lapply(l, function(x) { x$plot <- NULL; return(x)})
 	b[[i]] <- param
 }

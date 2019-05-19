@@ -10,8 +10,8 @@ param <- bind_rows(
 		bxu3 = 0.3,
 		nu1 = c(1, 5, 10, 14),
 		nu2 = c(1, 5, 10, 14),
-		outliers_known = c(FALSE),
-		simr = c(1:2000)
+		outliers_known = c(FALSE, TRUE),
+		simr = c(1:1000)
 	),
 	expand.grid(
 		nid = c(5000),
@@ -20,8 +20,8 @@ param <- bind_rows(
 		bxu3 = 0.45,
 		nu1 = c(1, 5, 10, 14),
 		nu2 = c(1, 5, 10, 14),
-		outliers_known = c(FALSE),
-		simr = c(1:2000)
+		outliers_known = c(FALSE, TRUE),
+		simr = c(1:1000)
 	),
 	expand.grid(
 		nid = c(5000),
@@ -30,8 +30,8 @@ param <- bind_rows(
 		bxu3 = 0,
 		nu1 = c(1, 5, 10, 14),
 		nu2 = c(1, 5, 10, 14),
-		outliers_known = c(FALSE),
-		simr = c(1:2000)
+		outliers_known = c(FALSE, TRUE),
+		simr = c(1:1000)
 	)
 )
 param$sim <- 1:nrow(param)
@@ -62,4 +62,4 @@ l <- mclapply(1:nrow(param), function(i)
 	return(out)
 }, mc.cores=ncores)
 
-save(l, param, file=paste0("../results/sim5_", chunk, ".rdata"))
+save(l, param, file=paste0("../results/scratch/sim5_", chunk, ".rdata"))
