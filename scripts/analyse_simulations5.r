@@ -1,6 +1,18 @@
 library(dplyr)
 library(ggplot2)
 load("../results/sim5_summary.rdata")
+simr5 <- simr
+simr5$sim <- paste0(5, simr5$sim)
+load("../results/sim6_summary.rdata")
+simr6 <- simr
+simr6$sim <- paste0(6, simr6$sim)
+load("../results/sim7_summary.rdata")
+simr7 <- simr
+simr7$sim <- paste0(7, simr7$sim)
+
+simr <- simr7
+# simr <- bind_rows(simr6, simr7)
+# simr$directional_bias[is.na(simr$directional_bias)] <- FALSE
 
 simr$nu <- simr$nu1 + simr$nu2
 simr$mediator <- simr$bu3y * simr$bxu3
