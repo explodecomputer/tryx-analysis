@@ -1,14 +1,14 @@
 library(tryx)
 library(parallel)
 library(tidyverse)
-
+library(simulateGP)
 
 
 param <- bind_rows(
 	# U1
 	expand.grid(
 		set = "U1",
-		nid = 5000,
+		nid = 10000,
 		ngx = c(5, 10, 15, 20, 25, 30),
 		ngu1 = c(5, 10, 15, 20, 25, 30),
 		ngu2 = 30,
@@ -36,7 +36,7 @@ param <- bind_rows(
 	# U2
 	expand.grid(
 		set = "U2",
-		nid = 5000,
+		nid = 10000,
 		ngx = 30,
 		ngu1 = 30,
 		ngu2 = 30,
@@ -64,7 +64,7 @@ param <- bind_rows(
 	# U3
 	expand.grid(
 		set = "U3",
-		nid = 5000,
+		nid = 10000,
 		ngx = 30,
 		ngu1 = 30,
 		ngu2 = 30,
