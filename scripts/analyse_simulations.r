@@ -1,9 +1,146 @@
+---
+title: Analysing simulations
+author: Gibran Hemani
+---
+
+Simulations run using this model [https://photos.google.com/photo/AF1QipNbxPRZyr7iODKRwuwrEmYALTpxnyudq7xovC7v](https://photos.google.com/photo/AF1QipNbxPRZyr7iODKRwuwrEmYALTpxnyudq7xovC7v)
+
+
+
 library(tidyverse)
-load("../results/sim4_summary.rdata")
-simres <- subset(simres, est != "Outliers removed")
-simres$est[simres$est == "Outliers removed"] <- "Outliers removed (candidates)"
+load("../results/sim8_summary.rdata")
+# simres <- subset(simres, est != "Outliers removed")
+# simres$est[simres$est == "Outliers removed"] <- "Outliers removed (candidates)"
 
 ## Main plots
+
+
+simres$prop_invalid_bin <- cut(simres$prop_invalid, breaks=c(0, 0.2, 0.4, 0.6, 0.8, 1), ordered=TRUE)
+hist(simres$prop_invalid)
+table(simres$prop_invalid_bin)
+
+
+simresu1 <- subset(simres, set == "U1")
+dim(simresu1)
+
+sumu1 <- simresu1 %>% 
+	group_by(method, prop_invalid_bin, set) %>%
+	summarise(
+		n=n(),
+		psig=sum(pval < 1e-3, na.rm=TRUE) / n(),
+		bias=sum(pdiff < 0.05, na.rm=TRUE) / n(),
+		isq=mean(Isq)
+	)
+
+sumu1b <- simresu1 %>% 
+	group_by(method, prop_invalid_bin, set, bxy) %>%
+	summarise(
+		n=n(),
+		psig=sum(pval < 1e-3, na.rm=TRUE) / n(),
+		bias=sum(pdiff < 0.05, na.rm=TRUE) / n(),
+		isq=mean(Isq)
+	)
+
+sumu1 %>% 
+filter(!grepl("Hybrid", method)) %>%
+ggplot(aes(y=bias, x=prop_invalid_bin, group=as.factor(method)), colour=as.factor(method)) +
+geom_point(aes(colour=as.factor(method))) +
+geom_line(aes(colour=as.factor(method))) +
+scale_colour_brewer(type="qual") +
+labs(x="Proportion of SNPs with pleiotropic effects", y="Proportion of estimates that are biased", colour="Method", shape="Outlier detection", linetype="Outlier detection") +
+ylim(c(0,1))
+
+
+sumu1b %>% 
+filter(!grepl("Hybrid", method)) %>%
+ggplot(aes(y=psig, x=prop_invalid_bin, group=as.factor(method)), colour=as.factor(method)) +
+geom_point(aes(colour=as.factor(method))) +
+geom_line(aes(colour=as.factor(method))) +
+facet_grid(. ~ bxy) +
+scale_colour_brewer(type="qual") +
+labs(x="Proportion of SNPs with pleiotropic effects", y="False discovery rate / power", colour="Method", shape="Outlier detection", linetype="Outlier detection")
+
+
+
+
+simresu2 <- subset(simres, set == "U2")
+dim(simresu2)
+
+sumu2 <- simresu2 %>% 
+	group_by(method, prop_invalid_bin, set, directional_bias) %>%
+	summarise(
+		n=n(),
+		psig=sum(pval < 1e-6, na.rm=TRUE) / n(),
+		bias=sum(pdiff < 0.05, na.rm=TRUE) / n(),
+		isq=mean(Isq)
+	)
+
+sumu2b1 <- simresu2 %>% 
+	subset(bxy == 0) %>%
+	group_by(method, prop_invalid_bin, set, bxy, directional_bias) %>%
+	summarise(
+		n=n(),
+		psig=sum(pval < 0.05, na.rm=TRUE) / n(),
+		bias=sum(pdiff < 0.05, na.rm=TRUE) / n(),
+		isq=mean(Isq)
+	)
+sumu2b2 <- simresu2 %>% 
+	subset(bxy != 0) %>%
+	group_by(method, prop_invalid_bin, set, bxy, directional_bias) %>%
+	summarise(
+		n=n(),
+		psig=sum(pval < 1e-6, na.rm=TRUE) / n(),
+		bias=sum(pdiff < 0.05, na.rm=TRUE) / n(),
+		isq=mean(Isq)
+	)
+sumu2b <- bind_rows(sumu2b1, sumu2b2)
+
+sumu2 %>% 
+filter(!grepl("Hybrid", method), !is.na(prop_invalid_bin)) %>%
+ggplot(aes(y=bias, x=prop_invalid_bin, group=as.factor(method)), colour=as.factor(method)) +
+geom_point(aes(colour=as.factor(method))) +
+geom_line(aes(colour=as.factor(method))) +
+facet_grid(. ~ directional_bias) +
+scale_colour_brewer(type="qual") +
+labs(x="Proportion of SNPs with pleiotropic effects", y="Proportion of estimates that are biased", colour="Method", shape="Outlier detection", linetype="Outlier detection")
+
+sumu2b %>% 
+filter(!grepl("Hybrid", method), !is.na(prop_invalid_bin)) %>%
+ggplot(aes(y=psig, x=prop_invalid_bin, group=as.factor(method)), colour=as.factor(method)) +
+geom_point(aes(colour=as.factor(method))) +
+geom_line(aes(colour=as.factor(method))) +
+facet_grid(directional_bias ~ bxy) +
+scale_colour_brewer(type="qual") +
+labs(x="Number of SNPs with pleiotropic effects", y="Proportion of estimates that are biased", colour="Method", shape="Outlier detection", linetype="Outlier detection")
+
+
+simresu3 <- subset(simres, set == "U3")
+dim(simresu3)
+
+sumu3 <- simresu3 %>% 
+	group_by(method, prop_invalid_bin, set, bxy) %>%
+	summarise(
+		n=n(),
+		psig=sum(pval < 0.05, na.rm=TRUE) / n(),
+		bias=sum(pdiff < 0.05, na.rm=TRUE) / n(),
+		isq=mean(Isq)
+	)
+
+sumu3 %>% 
+filter(!grepl("Hybrid", method), !is.na(prop_invalid_bin)) %>%
+ggplot(aes(y=bias, x=prop_invalid_bin, group=as.factor(method)), colour=as.factor(method)) +
+geom_point(aes(colour=as.factor(method))) +
+geom_line(aes(colour=as.factor(method))) +
+facet_grid(. ~ bxy) +
+scale_colour_brewer(type="qual") +
+labs(x="Proportion of SNPs with pleiotropic effects", y="Proportion of estimates that are biased", colour="Method", shape="Outlier detection", linetype="Outlier detection")
+
+
+
+
+
+
+
 
 temp2 <- filter(simres, bxy >= 0) %>%
 	group_by(method, nu, bxy, nid) %>%
