@@ -132,6 +132,8 @@ l <- mclapply(1:nrow(param), function(i)
 			bu3y = param$bu3y[i],
 			vgxu2 = param$vgxu2[i],
 			vu2y = param$vu2y[i],
+			ngxu3 = param$ngxu3[i],
+			vgxu3 = param$vgxu3[i],
 			mininum_instruments = param$mininum_instruments[i],
 			instrument_threshold = param$instrument_threshold[i],
 			outlier_threshold = param$outlier_threshold[i],

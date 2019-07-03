@@ -6,7 +6,7 @@ author: Gibran Hemani
 Simulations run using this model [https://photos.google.com/photo/AF1QipNbxPRZyr7iODKRwuwrEmYALTpxnyudq7xovC7v](https://photos.google.com/photo/AF1QipNbxPRZyr7iODKRwuwrEmYALTpxnyudq7xovC7v)
 
 
-
+```{r}
 library(tidyverse)
 load("../results/sim8_summary.rdata")
 # simres <- subset(simres, est != "Outliers removed")
