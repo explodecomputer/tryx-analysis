@@ -16,7 +16,6 @@ fi
 
 i=${SLURM_ARRAY_TASK_ID}
 
-Rscript collate_simulations6.r
-Rscript collate_simulations7.r
-
+Rscript collate_simulations8.r
+Rscript summarise_simulations8.r
 
