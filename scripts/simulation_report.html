@@ -545,42 +545,27 @@ p6</code></pre>
 <div id="summary" class="section level2">
 <h2>Summary</h2>
 <p>Overall, what proportion of times does each of the methods best perform?</p>
-<pre class="r"><code>x &lt;- sumu3 %&gt;% group_by(ngxu3, mediation)
-a &lt;- x %&gt;% nest %&gt;% slice(1) %&gt;% unnest
-a %&gt;% arrange(desc(bias)) %&gt;% mutate(rank=1:n())</code></pre>
-<pre><code>## # A tibble: 9 x 9
-##   ngxu3 mediation     method        set       n   psig   bias     isq  rank
-##   &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;
-## 1     1 Complete med… Raw           U3     1947 0.653  0.921   0.827      1
-## 2     1 Complete med… Removed (det… U3     1947 0.994  0.844   0.0969     2
-## 3     1 Complete med… Adjusted (ou… U3      952 0.985  0.747   0.104      3
-## 4     1 Complete med… Removed (det… U3     1947 0.993  0.737   0.0112     4
-## 5     1 Complete med… Hybrid (outl… U3      952 0.984  0.684   0.0411     5
-## 6     1 Complete med… Adjusted (al… U3      995 0.968  0.558   0.151      6
-## 7     1 Complete med… Hybrid (all … U3      995 0.957  0.523   0.0478     7
-## 8     1 Complete med… MVMR (outlie… U3      952 0.244  0.190  NA          8
-## 9     1 Complete med… MVMR (all va… U3      995 0.0884 0.0251 NA          9</code></pre>
 <pre class="r"><code>overall &lt;- bind_rows(
     sumu1 %&gt;% filter(!grepl(&quot;Hybrid&quot;, method)) %&gt;%
-    group_by(prop_invalid_bin) %&gt;% 
+    group_by(prop_invalid_bin2) %&gt;% 
     arrange(desc(bias)) %&gt;%
     mutate(rank=1:n(), what=&quot;bias&quot;) %&gt;%
     select(method, set, rank, what),
 
     sumu1b %&gt;% filter(!grepl(&quot;Hybrid&quot;, method)) %&gt;%
-    group_by(prop_invalid_bin) %&gt;% 
+    group_by(prop_invalid_bin2) %&gt;% 
     arrange(desc(auc)) %&gt;%
     mutate(rank=1:n(), what=&quot;auroc&quot;) %&gt;%
     select(method, set, rank, what),
     
     sumu2 %&gt;% filter(!grepl(&quot;Hybrid&quot;, method)) %&gt;%
-    group_by(prop_invalid_bin, directional_bias2) %&gt;% 
+    group_by(prop_invalid_bin2, directional_bias2) %&gt;% 
     arrange(desc(bias)) %&gt;%
     mutate(rank=1:n(), what=&quot;bias&quot;) %&gt;%
     select(method, set, rank, what),
 
     sumu2b %&gt;% filter(!grepl(&quot;Hybrid&quot;, method)) %&gt;%
-    group_by(prop_invalid_bin, directional_bias2) %&gt;% 
+    group_by(prop_invalid_bin2, directional_bias2) %&gt;% 
     arrange(desc(auc)) %&gt;%
     mutate(rank=1:n(), what=&quot;auroc&quot;) %&gt;%
     select(method, set, rank, what),
@@ -597,6 +582,9 @@ a %&gt;% arrange(desc(bias)) %&gt;% mutate(rank=1:n())</code></pre>
     mutate(rank=1:n(), what=&quot;auroc&quot;) %&gt;%
     select(method, set, rank, what)
 ) %&gt;% select(method, set, rank, what)</code></pre>
+<p>How many scenarios are there in total?</p>
+<pre class="r"><code>overall %&gt;% group_by(method) %&gt;% nest %&gt;% slice(1) %&gt;% unnest %&gt;% nrow</code></pre>
+<pre><code>## [1] 47</code></pre>
 <p>Overall best ranked</p>
 <pre class="r"><code>overall %&gt;% group_by(method) %&gt;% summarise(rank=sum(rank)) %&gt;% arrange(rank) %&gt;% kable</code></pre>
 <table>

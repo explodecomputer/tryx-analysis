@@ -197,31 +197,28 @@ Overall, what proportion of times does each of the methods best perform?
 
 
 ```{r}
-x <- sumu3 %>% group_by(ngxu3, mediation)
-a <- x %>% nest %>% slice(1) %>% unnest
-a %>% arrange(desc(bias)) %>% mutate(rank=1:n())
 
 overall <- bind_rows(
 	sumu1 %>% filter(!grepl("Hybrid", method)) %>%
-	group_by(prop_invalid_bin) %>% 
+	group_by(prop_invalid_bin2) %>% 
 	arrange(desc(bias)) %>%
 	mutate(rank=1:n(), what="bias") %>%
 	select(method, set, rank, what),
 
 	sumu1b %>% filter(!grepl("Hybrid", method)) %>%
-	group_by(prop_invalid_bin) %>% 
+	group_by(prop_invalid_bin2) %>% 
 	arrange(desc(auc)) %>%
 	mutate(rank=1:n(), what="auroc") %>%
 	select(method, set, rank, what),
 	
 	sumu2 %>% filter(!grepl("Hybrid", method)) %>%
-	group_by(prop_invalid_bin, directional_bias2) %>% 
+	group_by(prop_invalid_bin2, directional_bias2) %>% 
 	arrange(desc(bias)) %>%
 	mutate(rank=1:n(), what="bias") %>%
 	select(method, set, rank, what),
 
 	sumu2b %>% filter(!grepl("Hybrid", method)) %>%
-	group_by(prop_invalid_bin, directional_bias2) %>% 
+	group_by(prop_invalid_bin2, directional_bias2) %>% 
 	arrange(desc(auc)) %>%
 	mutate(rank=1:n(), what="auroc") %>%
 	select(method, set, rank, what),
@@ -238,6 +235,12 @@ overall <- bind_rows(
 	mutate(rank=1:n(), what="auroc") %>%
 	select(method, set, rank, what)
 ) %>% select(method, set, rank, what)
+```
+
+How many scenarios are there in total?
+
+```{r}
+overall %>% group_by(method) %>% nest %>% slice(1) %>% unnest %>% nrow
 ```
 
 
