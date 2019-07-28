@@ -1,39 +1,39 @@
 # Analyses and simulations
 
-## `sim1`
+## Simulations
 
-When there is heterogeneity we can either do nothing (use all instruments), remove outliers, or adjust outliers for their detected alternative pathways.
+### Pleiotropy
 
-We can assume knowledge of all outliers (pleiotropy known), or try to detect outliers (pleiotropy detected).
+1. The set of simulations is split across 694 chunks.
 
-Therefore there are 5 methods:
+    ```
+    sbatch sims_run.sh
+    ```
 
-- Raw, where the effects are estimated with IVW random effects model
-- Outliers removed (pleiotropy known), where the SNPs known to have pleiotropic effects are removed
-- Outliers removed (pleiotropy detected), where the RadialMR package is used to detect pleiotropy and then those are removed
-- Outliers adjusted (pleiotropy known), where the SNPs known to have pleiotropic effects are used to find alternative pathways, and the effects are adjusted based on their associations with other traits
-- Outliers adjusted (pleiotropy detected), where the SNPs detected (using RadialMR) to be outliers are used to find alternative pathways, and the effects are adjusted based on those.
+2. Gather simulations
+    
+    ```
+    sims_gather.sh
+    ```
 
-Amongst these methods, how does statistical power, FDR and bias compare?
+3. Collapse and summarise simulations
 
-Vary:
+    ```
+    Rscript sims_summary.r
+    ```
 
-- Number of SNPs that influence an alternative trait that in turn influences the outcome
-- Number of SNPs that influence an alternative trait that in turn influences both the exposure and the outcome
+This creates `results/sim_summary.rdata`.
 
-Run 1000 simulations for each parameter.
+4. Generate report
 
-To run the simulations (best to do it on bluecrystal3 node with 16 cores):
+    ```
+    Rscript -e "rmarkdown::render('sims_report.rmd', output_format='all')"
+    ```
 
-```
-cd scripts
-Rscript run_simulations1.r
-```
 
-To generate figures
+### Multivariable LASSO
 
-```
-cd scripts
-Rscript analyse_simulations.r
-```
+- **Excluding redundant traits** - `Rscript scripts/mvmr_sims.r`
+
+
 

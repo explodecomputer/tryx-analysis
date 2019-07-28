@@ -93,7 +93,3 @@ do({
 
 save(m, file="../results/mvmr_simulations.rdata")
 
-s <- m %>% group_by(expa=grepl("a",exposure), method, sim, plei) %>%
-summarise(n=sum(b!=0), b=sum(b))
-
-group_by(s, expa, method, plei) %>% summarise(bias=mean(b)-0.2, sd=sd(b), n=mean(n), count=n())
