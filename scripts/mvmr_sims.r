@@ -54,6 +54,21 @@ l2 <- mclapply(1:500, function(S)
     runsim(snps1=1:40, snps2=41:80)
   }, mc.cores=16)
 
+l3 <- mclapply(1:500, function(S)
+  {
+    message(S)
+    set.seed(S)
+    runsim(nprox=15)
+  }, mc.cores=16)
+
+l4 <- mclapply(1:500, function(S)
+  {
+    message(S)
+    set.seed(S)
+    runsim(snps1=1:40, snps2=41:80, nprox=15)
+  }, mc.cores=16)
+
+
 m1 <- lapply(1:length(l1), function(x)
 {
   bind_rows(
@@ -61,7 +76,7 @@ m1 <- lapply(1:length(l1), function(x)
     mutate(l1[[x]][[1]] %>% filter(pval < 0.05), method="pval"),
     mutate(l1[[x]][[2]], method="lasso1"),
     mutate(l1[[x]][[3]], method="lasso2"),
-  ) %>% mutate(sim=x, plei=TRUE)
+  ) %>% mutate(sim=x, plei=TRUE, nprox=5)
 }) %>% bind_rows %>% as_tibble
 
 m2 <- lapply(1:length(l2), function(x)
@@ -71,10 +86,31 @@ m2 <- lapply(1:length(l2), function(x)
     mutate(l2[[x]][[1]] %>% filter(pval < 0.05), method="pval"),
     mutate(l2[[x]][[2]], method="lasso1"),
     mutate(l2[[x]][[3]], method="lasso2")
-  ) %>% mutate(sim=x, plei=FALSE)
+  ) %>% mutate(sim=x, plei=FALSE, nprox=5)
 }) %>% bind_rows %>% as_tibble
 
-m <- bind_rows(m1, m2) %>% 
+m3 <- lapply(1:length(l3), function(x)
+{
+  bind_rows(
+    mutate(l3[[x]][[1]], method="full"),
+    mutate(l3[[x]][[1]] %>% filter(pval < 0.05), method="pval"),
+    mutate(l3[[x]][[2]], method="lasso1"),
+    mutate(l3[[x]][[3]], method="lasso2"),
+  ) %>% mutate(sim=x, plei=TRUE, nprox=15)
+}) %>% bind_rows %>% as_tibble
+
+m4 <- lapply(1:length(l4), function(x)
+{
+  bind_rows(
+    mutate(l4[[x]][[1]], method="full"),
+    mutate(l4[[x]][[1]] %>% filter(pval < 0.05), method="pval"),
+    mutate(l4[[x]][[2]], method="lasso1"),
+    mutate(l4[[x]][[3]], method="lasso2"),
+  ) %>% mutate(sim=x, plei=FALSE, nprox=15)
+}) %>% bind_rows %>% as_tibble
+
+
+m <- bind_rows(m1, m2, m3, m4) %>% 
 group_by(sim, plei) %>%
 do({
   x <- .
