@@ -59,7 +59,7 @@ filter(!grepl("Hybrid", method)) %>%
 ggplot(aes(y=bias, x=prop_invalid_bin2, group=as.factor(method)), colour=as.factor(method)) +
 geom_point(aes(colour=as.factor(method))) +
 geom_line(aes(colour=as.factor(method))) +
-scale_colour_brewer(type="qual") +
+scale_colour_brewer(type="div", palette="Dark2") +
 labs(x="Proportion of SNPs with pleiotropic effects", y="Proportion of estimates that are unbiased", colour="Method", shape="Outlier detection", linetype="Outlier detection") +
 ylim(c(0,1))
 p1
@@ -85,7 +85,7 @@ filter(!grepl("Hybrid", method)) %>%
 ggplot(aes(y=auc, x=prop_invalid_bin2, group=as.factor(method)), colour=as.factor(method)) +
 geom_point(aes(colour=as.factor(method))) +
 geom_line(aes(colour=as.factor(method))) +
-scale_colour_brewer(type="qual") +
+scale_colour_brewer(type="div", palette="Dark2") +
 labs(x="Proportion of SNPs with pleiotropic effects", y="AUROC", colour="Method", shape="Outlier detection", linetype="Outlier detection") +
 ylim(c(0.45, 1))
 p2
@@ -116,7 +116,7 @@ ggplot(aes(y=bias, x=prop_invalid_bin2, group=as.factor(method)), colour=as.fact
 geom_point(aes(colour=as.factor(method))) +
 geom_line(aes(colour=as.factor(method))) +
 facet_grid(. ~ directional_bias2) +
-scale_colour_brewer(type="qual") +
+scale_colour_brewer(type="div", palette="Dark2") +
 labs(x="Proportion of SNPs with pleiotropic effects", y="Proportion of estimates that are unbiased", colour="Method", shape="Outlier detection", linetype="Outlier detection")
 p3
 ```
@@ -141,7 +141,7 @@ ggplot(aes(y=auc, x=prop_invalid_bin2, group=as.factor(method)), colour=as.facto
 geom_point(aes(colour=as.factor(method))) +
 geom_line(aes(colour=as.factor(method))) +
 facet_grid(. ~ directional_bias2) +
-scale_colour_brewer(type="qual") +
+scale_colour_brewer(type="div", palette="Dark2") +
 labs(x="Number of SNPs with pleiotropic effects", y="AUROC", colour="Method", shape="Outlier detection", linetype="Outlier detection") +
 ylim(c(0.45, 1))
 p4
@@ -177,7 +177,7 @@ ggplot(aes(y=bias, x=ngxu3/ngx, group=as.factor(method)), colour=as.factor(metho
 geom_point(aes(colour=as.factor(method))) +
 geom_line(aes(colour=as.factor(method))) +
 facet_grid(. ~ mediation) +
-scale_colour_brewer(type="qual") +
+scale_colour_brewer(type="div", palette="Dark2") +
 labs(x="Proportion of SNPs with pleiotropic effects", y="Proportion of estimates that are unbiased", colour="Method", shape="Outlier detection", linetype="Outlier detection")
 p5
 ```
@@ -191,7 +191,7 @@ ggplot(aes(y=psig, x=ngxu3/ngx, group=as.factor(method)), colour=as.factor(metho
 geom_point(aes(colour=as.factor(method))) +
 geom_line(aes(colour=as.factor(method))) +
 facet_grid(. ~ mediation) +
-scale_colour_brewer(type="qual") +
+scale_colour_brewer(type="div", palette="Dark2") +
 labs(x="Proportion of SNPs with pleiotropic effects", y="Proportion of estimates that are unbiased", colour="Method", shape="Outlier detection", linetype="Outlier detection") +
 ylim(c(0.45, 1))
 p6
@@ -279,7 +279,7 @@ library(gridExtra)
 th1 <- theme_bw() + theme(legend.position="none", axis.title=element_blank(), axis.ticks.y=element_blank(), axis.text.y=element_blank())
 th2 <- theme_bw() + theme(legend.position="none", axis.title.x=element_blank())
 
-pdf("../images/allplots.pdf", width=12)
+png("../images/allplots_cbfriendly.png", width=12, res=300)
 grid.arrange(
 	p1+th2 + ylim(c(0,1)) + facet_wrap(~ ""), 
 	p3+th1 + ylim(c(0.45,1)), 
