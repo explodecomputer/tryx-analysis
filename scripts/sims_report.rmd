@@ -279,7 +279,7 @@ library(gridExtra)
 th1 <- theme_bw() + theme(legend.position="none", axis.title=element_blank(), axis.ticks.y=element_blank(), axis.text.y=element_blank())
 th2 <- theme_bw() + theme(legend.position="none", axis.title.x=element_blank())
 
-png("../images/allplots_cbfriendly.png", width=12, res=300)
+pdf("../images/allplots_cbfriendly.pdf", width=12, res=300)
 grid.arrange(
 	p1+th2 + ylim(c(0,1)) + facet_wrap(~ ""), 
 	p3+th1 + ylim(c(0.45,1)), 
